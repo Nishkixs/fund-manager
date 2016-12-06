@@ -1,10 +1,9 @@
 'use strict';
 
 // user require with a reference to bundle the file and use it in this file
-// var example = require('./example');
+// let example = require('assets/scripts/app.js');
 
 // use require without a reference to ensure a file is bundled
-
 
 
 
@@ -17,7 +16,7 @@ $(() => {
  $('#signUpModal').modal('show');
  });
  $('#btnLogin').on('click', function(){
-    //  let firebase = require('firebase');
+     let firebase = require('firebase');
      let config = {
        apiKey: "AIzaSyBkmw-vbMTDNGJss3bDQrRTaJCslMCP65s",
        authDomain: "bettor-half-70e6d.firebaseapp.com",
@@ -41,6 +40,28 @@ $(() => {
            const promise = auth.signInWithEmailAndPassword(email, pass);
            promise.catch(e => console.log(e.message));
        });
+
+      });
+
+      $('#btnLogout').on('click', function(){
+        let firebase = require('firebase');
+        let config = {
+          apiKey: "AIzaSyBkmw-vbMTDNGJss3bDQrRTaJCslMCP65s",
+          authDomain: "bettor-half-70e6d.firebaseapp.com",
+          databaseURL: "https://bettor-half-70e6d.firebaseio.com",
+          storageBucket: "bettor-half-70e6d.appspot.com",
+          messagingSenderId: "495009639670"
+        };
+        firebase.initializeApp(config);
+        const btnLogout = document.getElementById('btnLogout');
+
+        btnLogout.addEventListener('click', e => {
+        console.log('not logged in');
+        firebase.auth().signOut();
+
+
+ });
+
 
 
 
