@@ -33,7 +33,11 @@
       firebase.auth().onAuthStateChanged(user => {
           if(user) {
               console.log('User Logged in :' + user );
-              // events.render();
+              console.log("Sign-in provider: "+user.providerId);
+              console.log("  Provider-specific UID: "+user.uid);
+              console.log("  Name: "+user.displayName);
+              console.log("  Email: "+user.email);
+                        // events.render();
 
           }else{
               console.log('User Not Logged in');
@@ -44,4 +48,13 @@
       btnLogout.addEventListener('click', e => {
           firebase.auth().signOut();
       });
+
+      let users = document.getElementById('user');
+      // getting the element with an id of first name
+      let dbRef = firebase.database().ref().child('users');
+      // Creating a database reference by creating a child location to the 'first name'
+      // location
+      dbRef.on('value',snap => users.innerText = snap.val());
+      // synchronize the changes using the (on) function
+      // using fat arrow function to do it all in one line!
     }());

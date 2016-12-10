@@ -11,7 +11,7 @@ City of Birth: State of Birth: Country of Birth:
 Have you ever used a different name or alias? Yes No
 If yes, list below all maiden names, aliases and any name changes, legal or otherwise.
 B. Contact Information
-Home Address (cannot be a P.O. Box): 
+Home Address (cannot be a P.O. Box):
 City:State: Zip Code: Years at address:
 Best Daytime Phone: Mobile Phone:
 E-mail Address:
